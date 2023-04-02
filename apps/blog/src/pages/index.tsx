@@ -1,4 +1,5 @@
 import { SignInButton, SignOutButton, useUser } from '@clerk/nextjs'
+import { Button } from '@mui/material'
 import { type NextPage } from 'next'
 import Head from 'next/head'
 
@@ -18,7 +19,8 @@ const Home: NextPage = () => {
         <meta name="description" content="Refine Studio - Blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="">
+      <main>
+        <Button sx={{ bgcolor: 'black' }}>Test</Button>
         {user.isSignedIn && <h1>{user.user.firstName}</h1>}
         {!user.isSignedIn && <SignInButton />}
         {user.isSignedIn && <SignOutButton />}
