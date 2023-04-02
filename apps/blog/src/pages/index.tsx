@@ -1,7 +1,7 @@
 import { SignInButton, SignOutButton, useUser } from '@clerk/nextjs'
-import { Button } from '@mui/material'
 import { type NextPage } from 'next'
 import Head from 'next/head'
+import { Button } from 'ui'
 
 import { api } from '~/utils/api'
 
@@ -20,13 +20,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Button sx={{ bgcolor: 'black' }}>Test</Button>
+        <Button>Test</Button>
         {user.isSignedIn && <h1>{user.user.firstName}</h1>}
         {!user.isSignedIn && <SignInButton />}
         {user.isSignedIn && <SignOutButton />}
         <div>
           {data?.map(post => (
-            <div key={post.id}>{post.id}</div>
+            <div key={post.id}>{post.content}</div>
           ))}
         </div>
       </main>
