@@ -1,7 +1,8 @@
-import { SignInButton, SignOutButton, useUser } from '@clerk/nextjs'
 import { type NextPage } from 'next'
 import Head from 'next/head'
-import { Typography, Container } from 'ui'
+
+import { Typography, Container, Section } from 'ui'
+
 import Base from '~/layouts/Base'
 
 import { api } from '~/utils/api'
@@ -18,14 +19,16 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Base>
-          <Container>
-            <Typography variant="h1">Home</Typography>
-            <div>
-              {data?.map(post => (
-                <div key={post.id}>{post.content}</div>
-              ))}
-            </div>
-          </Container>
+          <Section>
+            <Container>
+              <Typography variant="h1">Home</Typography>
+              <div>
+                {data?.map(post => (
+                  <div key={post.id}>{post.content}</div>
+                ))}
+              </div>
+            </Container>
+          </Section>
         </Base>
       </main>
     </>

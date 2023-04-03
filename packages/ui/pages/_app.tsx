@@ -4,7 +4,7 @@ import { EmotionCache } from '@emotion/react'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 
 import createEmotionCache from '../utils/createEmotionCache'
-import theme from '../theme'
+import { light } from '../brands'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -15,7 +15,7 @@ export interface MyAppProps extends AppProps {
 const MyApp: AppType = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={light}>
       <CssBaseline />
       <Component {...pageProps} />
     </ThemeProvider>

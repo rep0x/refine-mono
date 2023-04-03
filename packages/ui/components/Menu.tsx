@@ -10,7 +10,12 @@ export const Menu = (props: MenuProps) => {
 }
 
 const styles = {
-  '& .MuiPopover-paper .MuiList-root': {
+  '& .MuiPopover-paper': {
+    bgcolor: 'background.paper',
+    backgroundImage: 'none',
+  },
+
+  '& .MuiList-root': {
     p: 1,
 
     '& .menu-item': {

@@ -40,7 +40,8 @@ export const Nav = (props: Props) => {
 
 const styles = {
   height: 80,
-  bgcolor: 'background.paper',
+  background: 'background.paper',
+  backgroundImage: 'none',
   boxShadow: 2,
   color: 'text.primary',
 

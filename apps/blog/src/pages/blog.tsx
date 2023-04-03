@@ -5,8 +5,6 @@ import { Typography, Container, Section } from 'ui'
 
 import Base from '~/layouts/Base'
 
-import { api } from '~/utils/api'
-
 const Home: NextPage = () => {
   return (
     <>
