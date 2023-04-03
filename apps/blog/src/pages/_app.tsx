@@ -6,8 +6,8 @@ import { EmotionCache } from '@emotion/react'
 
 import { api } from '~/utils/api'
 import createEmotionCache from '~/utils/createEmotionCache'
-import { CssBaseline, ThemeProvider } from '@mui/material'
-import theme from '~/theme'
+import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material'
+import { theme } from 'ui'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -17,6 +17,7 @@ export interface MyAppProps extends AppProps {
 
 const MyApp: AppType = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+
   return (
     <ClerkProvider {...pageProps}>
       <Analytics />
