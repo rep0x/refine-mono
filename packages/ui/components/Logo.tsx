@@ -1,8 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 
 import { Box, Typography } from '@mui/material'
 import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded'
-import Link from 'next/link'
 
 export const Logo = () => {
   return (

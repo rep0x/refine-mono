@@ -75,6 +75,7 @@ const styles = {
       xs: 'flex',
       md: 'none',
     },
+    alignItems: 'center',
   },
 
   '& .menu-desktop': {
