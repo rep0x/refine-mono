@@ -9,8 +9,7 @@ export const roboto = Roboto({
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 })
 
-// Create a theme instance.
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: '#556cd6',
@@ -21,9 +20,20 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
+    background: {
+      paper: '#ffffff',
+      default: '#efefef',
+    },
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
+    h1: {
+      fontWeight: 700,
+      fontSize: 64,
+    },
+    button: {
+      textTransform: 'none',
+    },
   },
 })
 
