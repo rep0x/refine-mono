@@ -1,9 +1,15 @@
 import { type NextPage } from 'next'
 import Head from 'next/head'
 
-import { Typography, Container, Section } from 'ui'
+import { Typography, Container, Section, SectionNav } from 'ui'
 
 import Base from '~/layouts/Base'
+
+const SECTIONS = [
+  { label: 'Design', href: '#Design' },
+  { label: 'Development', href: '#Development' },
+  { label: 'Consulting', href: '#Consulting' },
+]
 
 const Services: NextPage = () => {
   return (
@@ -15,14 +21,23 @@ const Services: NextPage = () => {
       </Head>
       <main>
         <Base>
-          <Section>
-            <Container>
-              <Typography variant="h1" gutterBottom>
-                Services
-              </Typography>
-              <Typography color="text.secondary"># Work in Progress</Typography>
-            </Container>
-          </Section>
+          <SectionNav sections={SECTIONS} />
+          {SECTIONS.map(section => (
+            <Section
+              key={section.label}
+              id={section.label}
+              sx={{ minHeight: '100vh' }}
+            >
+              <Container>
+                <Typography variant="h1" gutterBottom>
+                  {section.label}
+                </Typography>
+                <Typography color="text.secondary">
+                  # Work in Progress
+                </Typography>
+              </Container>
+            </Section>
+          ))}
         </Base>
       </main>
     </>

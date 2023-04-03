@@ -17,7 +17,7 @@ export const Nav = (props: Props) => {
   const { logo = <Logo />, mainMenu, quickMenu, user } = props
 
   return (
-    <AppBar position="absolute" sx={styles}>
+    <AppBar position="fixed" sx={styles}>
       <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Box className="logo-desktop">{logo}</Box>
