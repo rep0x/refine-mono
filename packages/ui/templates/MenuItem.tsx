@@ -71,7 +71,7 @@ const styles = {
 
   '&.has-icon': {
     '& .link': {
-      pl: 1,
+      pl: 1 * 1.5,
     },
   },
 

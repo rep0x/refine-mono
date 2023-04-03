@@ -5,12 +5,9 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from '@vercel/analytics/react'
 import { EmotionCache } from '@emotion/react'
 
-import { CssBaseline, ThemeProvider } from '@mui/material'
-
-import { light, dark } from 'ui'
-
 import { api } from '~/utils/api'
 import createEmotionCache from '~/utils/createEmotionCache'
+import { ThemeProvider } from 'ui'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -24,8 +21,7 @@ const MyApp: AppType = (props: MyAppProps) => {
   return (
     <ClerkProvider {...pageProps}>
       <Analytics />
-      <ThemeProvider theme={dark}>
-        <CssBaseline />
+      <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>
     </ClerkProvider>

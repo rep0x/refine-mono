@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { AppBar, Box, Toolbar, Container } from '@mui/material'
 
-import { Logo } from 'ui'
+import { Logo, ToggleMode } from 'ui'
 
 import MobileMenu from './MobileMenu'
 
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const Nav = (props: Props) => {
-  const { logo = <Logo />, mainMenu, user } = props
+  const { logo = <Logo />, mainMenu, quickMenu, user } = props
 
   return (
     <AppBar position="absolute" sx={styles}>
@@ -31,7 +31,10 @@ export const Nav = (props: Props) => {
             <Box className="menu-desktop">{mainMenu.map(item => item)}</Box>
           )}
 
-          {user && <Box sx={{ flexGrow: 0 }}>{user}</Box>}
+          <Box className="right">
+            {quickMenu && <ToggleMode />}
+            {user && <Box sx={{ flexGrow: 0 }}>{user}</Box>}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
@@ -40,7 +43,7 @@ export const Nav = (props: Props) => {
 
 const styles = {
   height: 80,
-  background: 'background.paper',
+  backgroundColor: 'background.paper',
   backgroundImage: 'none',
   boxShadow: 2,
   color: 'text.primary',
@@ -81,5 +84,12 @@ const styles = {
       xs: 'none',
       md: 'flex',
     },
+  },
+
+  '& .right': {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    gap: 2,
   },
 }

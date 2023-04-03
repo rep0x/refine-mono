@@ -1,6 +1,8 @@
 import React from 'react'
 import { SignInButton, SignOutButton, useUser } from '@clerk/nextjs'
 
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded'
+
 import { BaseLayout, Nav, UserMenu, MenuItem } from 'ui'
 
 import { MENU } from '~/menus'
@@ -28,7 +30,7 @@ const Base: React.FC<Props> = props => {
             <UserMenu
               menu={[
                 <SignOutButton key="sign-out">
-                  <MenuItem label="Sign out" />
+                  <MenuItem label="Sign out" icon={<LogoutRoundedIcon />} />
                 </SignOutButton>,
               ]}
               user={{

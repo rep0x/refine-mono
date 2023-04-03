@@ -2,28 +2,34 @@ import React from 'react'
 
 import { Box, Typography } from '@mui/material'
 import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded'
+import Link from 'next/link'
 
 export const Logo = () => {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <DiamondRoundedIcon sx={{ display: 'flex', mr: 1 }} />
-      <Typography
-        variant="h6"
-        noWrap
-        component="a"
-        href="/"
-        sx={{
-          mr: 2,
+    <Box
+      sx={{
+        mr: 2,
+
+        '& a': {
           display: 'flex',
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.3rem',
+          alignItems: 'center',
           color: 'inherit',
           textDecoration: 'none',
-        }}
-      >
-        LOGO
-      </Typography>
+        },
+      }}
+    >
+      <Link href="/">
+        <DiamondRoundedIcon sx={{ display: 'flex', mr: 1 }} />
+        <Typography
+          variant="h6"
+          noWrap
+          sx={{
+            fontWeight: 700,
+          }}
+        >
+          Refine Studio
+        </Typography>
+      </Link>
     </Box>
   )
 }

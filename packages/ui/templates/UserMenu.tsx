@@ -73,7 +73,7 @@ const styles = {
   mt: '44px',
 
   '& .wrapper': {
-    px: 1,
+    px: 0,
 
     '& .header': {
       p: 1,

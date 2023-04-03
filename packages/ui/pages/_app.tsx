@@ -1,10 +1,9 @@
 import { type AppType } from 'next/app'
 import { AppProps } from 'next/app'
 import { EmotionCache } from '@emotion/react'
-import { CssBaseline, ThemeProvider } from '@mui/material'
 
 import createEmotionCache from '../utils/createEmotionCache'
-import { light } from '../brands'
+import { ThemeProvider } from '../ThemeProvider'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -14,9 +13,9 @@ export interface MyAppProps extends AppProps {
 
 const MyApp: AppType = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+
   return (
-    <ThemeProvider theme={light}>
-      <CssBaseline />
+    <ThemeProvider>
       <Component {...pageProps} />
     </ThemeProvider>
   )
