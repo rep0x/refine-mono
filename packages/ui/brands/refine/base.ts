@@ -1,14 +1,14 @@
 import { ThemeOptions } from '@mui/material'
-import { Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-export const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
+export const inter = Inter({
+  weight: ['400', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 })
 
-export const greyscale = {
+export const bluescale = {
   900: '#070E1D',
   800: '#131F37',
   700: '#293858',
@@ -21,10 +21,28 @@ export const greyscale = {
   50: '#F6F8FC',
 }
 
+export const greyscale = {
+  900: '#101010',
+  800: '#181818',
+  700: '#464646',
+  600: '#5E5E5E',
+  500: '#747474',
+  400: '#A3A3A3',
+  300: '#BABABA',
+  200: '#D1D1D1',
+  100: '#E8E8E8',
+  50: '#F3F3F3',
+}
+
+const baseHeadline = {
+  fontWeight: 900,
+  lineHeight: 1.1,
+}
+
 export const base: ThemeOptions = {
   palette: {
     primary: {
-      main: '#00E0CA',
+      main: '#00E6E6',
     },
     success: {
       main: '#1ADA67',
@@ -43,13 +61,16 @@ export const base: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
-    h1: {
-      fontWeight: 700,
-      fontSize: 64,
-    },
+    fontFamily: inter.style.fontFamily,
+    h1: { ...baseHeadline, fontSize: 64 },
+    h2: baseHeadline,
+    h3: baseHeadline,
+    h4: baseHeadline,
+    h5: baseHeadline,
+    h6: baseHeadline,
     button: {
       textTransform: 'none',
+      fontWeight: 700,
     },
   },
 }

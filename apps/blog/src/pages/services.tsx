@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { Typography, Container, Section, SectionNav } from 'ui'
 
-import Base from '~/layouts/Base'
+import { Base } from '~/layouts/Base'
 
 const SECTIONS = [
   { label: 'Design', href: '#Design' },

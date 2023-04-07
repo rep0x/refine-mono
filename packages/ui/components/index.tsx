@@ -1,11 +1,8 @@
 export { Button } from './Button'
-
 export { Container } from './Container'
-
+export { Cursor } from './Cursor'
 export { Logo } from './Logo'
-
 export { Section } from './Section'
-
+export { ScrollDown } from './ScrollDown'
 export { Typography } from './Typography'
-
 export { Menu } from './Menu'

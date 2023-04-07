@@ -1,11 +1,6 @@
 import React from 'react'
 
-import {
-  CssBaseline,
-  GlobalStyles,
-  ThemeProvider as MuiThemeProvider,
-  useTheme,
-} from '@mui/material'
+import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@mui/material'
 
 import { dark as darkTheme, light as lightTheme } from './brands'
 import { Scrollbar } from './components/Scrollbar'

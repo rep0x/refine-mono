@@ -9,7 +9,7 @@ import Document, {
 } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance'
 import { AppType } from 'next/app'
-import { light, roboto } from 'ui'
+import { light, inter } from 'ui'
 import { MyAppProps } from './_app'
 import createEmotionCache from '~/utils/createEmotionCache'
 
@@ -19,7 +19,7 @@ interface MyDocumentProps extends DocumentProps {
 
 export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
   return (
-    <Html lang="en" className={roboto.className}>
+    <Html lang="en" className={inter.className}>
       <Head>
         <meta name="theme-color" content={light.palette.primary.main} />
         <link rel="shortcut icon" href="/favicon.ico" />

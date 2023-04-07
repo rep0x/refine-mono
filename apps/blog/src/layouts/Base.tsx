@@ -3,21 +3,23 @@ import { SignInButton, SignOutButton, useUser } from '@clerk/nextjs'
 
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded'
 
-import { BaseLayout, Nav, UserMenu, MenuItem } from 'ui'
+import { BaseLayout, Nav, UserMenu, MenuItem, Cursor } from 'ui'
 
 import { MENU } from '~/menus'
+import { Box } from '@mui/material'
 
 interface Props {
   children: React.ReactNode
 }
 
-const Base: React.FC<Props> = props => {
+export const Base: React.FC<Props> = props => {
   const { children } = props
 
   const user = useUser()
 
   return (
     <BaseLayout>
+      <Cursor />
       <Nav
         mainMenu={MENU.map((item, index) => (
           <MenuItem key={index} {...item} />
@@ -45,10 +47,12 @@ const Base: React.FC<Props> = props => {
           )
         }
       />
-
-      {children}
+      <Box sx={styles}>{children}</Box>
     </BaseLayout>
   )
 }
 
-export default Base
+const styles = {
+  position: 'relative',
+  zIndex: 2,
+}

@@ -6,9 +6,14 @@ export const Scrollbar = () => {
   const theme = useTheme()
 
   const globalStyles = {
+    html: {
+      scrollBehaviour: 'smooth',
+    },
+
     /* width */
     '::-webkit-scrollbar': {
       width: 6,
+      zIndex: 1000000,
     },
 
     /* Track */
