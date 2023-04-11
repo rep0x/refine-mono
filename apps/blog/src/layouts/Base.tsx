@@ -21,6 +21,7 @@ export const Base: React.FC<Props> = props => {
     <BaseLayout>
       <Cursor />
       <Nav
+        variant='hovering'
         mainMenu={MENU.map((item, index) => (
           <MenuItem key={index} {...item} />
         ))}

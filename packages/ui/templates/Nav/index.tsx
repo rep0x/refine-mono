@@ -11,13 +11,14 @@ interface Props {
   mainMenu?: React.ReactNode[]
   quickMenu?: React.ReactNode[]
   user?: React.ReactNode
+  variant?: 'default' | 'hovering'
 }
 
 export const Nav = (props: Props) => {
-  const { logo = <Logo />, mainMenu, quickMenu, user } = props
+  const { logo = <Logo />, mainMenu, quickMenu, user, variant } = props
 
   return (
-    <AppBar position="fixed" sx={styles}>
+    <AppBar position="fixed" sx={styles} className={variant}>
       <Container maxWidth={false}>
         <Toolbar disableGutters>
           <Box className="logo-desktop">{logo}</Box>
@@ -93,4 +94,12 @@ const styles = {
     justifyContent: 'flex-end',
     gap: 2,
   },
+
+  '&.hovering': {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    width: 'calc(100vw - 40px)',
+    borderRadius: 2
+  }
 }
